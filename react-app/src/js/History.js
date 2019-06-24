@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/index.css';
 
 class History extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class History extends React.Component {
         return (
             <div>
                 <h2>History of users: </h2>
-                <ul>{listItems}</ul>
+                <ul className='history'>{listItems}</ul>
             </div>
         );
     }

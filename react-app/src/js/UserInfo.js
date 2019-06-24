@@ -2,6 +2,7 @@ import React from 'react';
 import GetName from './GetName';
 import ShowName from './ShowName';
 import History from "./History";
+import '../css/index.css';
 
 class UserInfo extends React.Component{
     constructor(props){
