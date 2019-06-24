@@ -8,9 +8,11 @@ class History extends React.Component {
 
     render() {
         const listItems = this.props.history.map((user, index) =>
-            <li key={index}>
+            <div key={index}>
+                <div/>
                 {user}
-            </li>
+                <div className='delete' onClick={this.props.onDelete.bind(this, index)}/>
+            </div>
         );
         return (
             <div>
