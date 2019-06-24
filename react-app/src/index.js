@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UserInfo from './js/UserInfo';
+import UserInfo from './js/components/UserInfo';
 
 class App extends React.Component{
     render() {

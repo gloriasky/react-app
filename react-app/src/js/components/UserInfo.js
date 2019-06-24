@@ -2,21 +2,24 @@ import React from 'react';
 import GetName from './GetName';
 import ShowName from './ShowName';
 import History from "./History";
-import '../css/index.css';
+import '../../css/index.css';
+import User from "../classes/User";
 
 class UserInfo extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            username: "",
+            currentUser: null,
             history: []
         };
     }
     onSubmit = (name) => {
+        let user = new User();
+        user.setUserName(name);
         this.setState({
-            username: name,
+            currentUser: user,
         });
-        this.state.history.push(name);
+        this.state.history.push(user);
     };
     onDelete = (index) => {
         this.setState({
@@ -34,7 +37,7 @@ class UserInfo extends React.Component{
         return(
             <div className="center">
                 <GetName onSubmit = {this.onSubmit}/>
-                <ShowName username={this.state.username}/>
+                <ShowName currentUser={this.state.currentUser}/>
                 <History history={this.state.history} onDelete={this.onDelete}/>
             </div>
         );

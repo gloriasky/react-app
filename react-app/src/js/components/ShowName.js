@@ -1,11 +1,11 @@
 import React from 'react';
-import '../css/index.css';
+import '../../css/index.css';
 
 class ShowName extends React.Component{
 
     getName(){
-        if(this.props.username){
-            return this.props.username;
+        if (this.props.currentUser) {
+            return this.props.currentUser.getUserName();
         }
         return 'everybody'
     }
